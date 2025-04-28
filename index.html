@@ -1,310 +1,390 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه چیت بازی - VIP Game Hacks</title>
+    <title>EliteGameHacks - Premium Game Cheats</title>
     <style>
         :root {
-            --dark-bg: #121212;
-            --darker-bg: #0a0a0a;
-            --accent-color: #2ecc71;
-            --text-color: #f1f1f1;
-            --card-bg: #1e1e1e;
+            --primary: #00ff88;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: rgba(255, 255, 255, 0.9);
+            --text-secondary: rgba(255, 255, 255, 0.6);
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
+
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
+
+        body {
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.1) 0px, transparent 50%);
+        }
+
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        
+
+        /* Header */
         header {
-            background: linear-gradient(to right, var(--darker-bg), var(--dark-bg));
-            padding: 20px 0;
-            border-bottom: 3px solid var(--accent-color);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 24px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
         }
-        
-        .tagline {
-            color: #aaa;
-            font-size: 1.2rem;
-            margin-top: 10px;
+
+        .logo span {
+            color: white;
         }
-        
-        nav {
-            margin-top: 20px;
-        }
-        
+
         nav ul {
             display: flex;
             list-style: none;
-            padding: 0;
-            margin: 0;
+            gap: 32px;
         }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: var(--text-color);
+
+        nav a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
+            font-weight: 500;
             transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 50px;
-            border-radius: 10px;
-            overflow: hidden;
             position: relative;
         }
-        
-        .hero-content {
-            z-index: 1;
-            max-width: 800px;
-            padding: 20px;
+
+        nav a:hover {
+            color: white;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+
+        nav a:hover::after {
+            width: 100%;
         }
-        
+
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 12px 30px;
-            border-radius: 5px;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 12px 24px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
         }
-        
+
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
         }
-        
-        .games-section {
-            margin-bottom: 50px;
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
         }
-        
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--accent-color);
+
+        .btn-outline:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
             position: relative;
-            padding-bottom: 10px;
         }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 3px;
-            background-color: var(--accent-color);
+
+        .hero-content {
+            max-width: 600px;
         }
-        
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Games */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
         }
-        
+
         .game-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 24px;
             transition: all 0.3s ease;
-            border: 1px solid #333;
         }
-        
+
         .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border-color: var(--accent-color);
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 136, 0.3);
         }
-        
-        .game-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .game-card-content {
-            padding: 20px;
-        }
-        
-        .game-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-        
-        .game-card p {
+
+        .game-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            background: rgba(0, 255, 136, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
-            color: #ccc;
         }
-        
-        .pricing-section {
-            margin-bottom: 50px;
+
+        .game-icon img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
         }
-        
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
+
+        .game-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
         }
-        
-        .pricing-table th, .pricing-table td {
-            padding: 15px;
+
+        .game-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .pricing-card {
+            padding: 32px;
             text-align: center;
-            border: 1px solid #333;
         }
-        
-        .pricing-table th {
-            background-color: var(--card-bg);
-            color: var(--accent-color);
-            font-size: 1.2rem;
+
+        .pricing-card.featured {
+            border: 1px solid var(--primary);
+            position: relative;
         }
-        
-        .pricing-table tr:nth-child(even) {
-            background-color: rgba(30, 30, 30, 0.5);
+
+        .pricing-card.featured::before {
+            content: 'Popular';
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
-        
-        .pricing-table tr:hover {
-            background-color: rgba(46, 204, 113, 0.1);
+
+        .pricing-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
         }
-        
+
         .price {
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 1.3rem;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary);
         }
-        
-        .features-section {
-            margin-bottom: 50px;
+
+        .price span {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
         }
-        
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Features */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
-        
+
         .feature-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid #333;
+            padding: 32px;
         }
-        
-        .feature-card i {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-        }
-        
+
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        footer {
-            background-color: var(--darker-bg);
-            padding: 50px 0 20px;
-            text-align: center;
-            border-top: 3px solid var(--accent-color);
-        }
-        
-        .footer-links {
+            font-size: 20px;
+            margin-bottom: 12px;
             display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
+            align-items: center;
+            gap: 12px;
         }
-        
-        .footer-links a {
-            color: var(--text-color);
-            margin: 0 15px;
+
+        .feature-card h3::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
-        
-        .footer-links a:hover {
-            color: var(--accent-color);
+
+        .footer-col a:hover {
+            color: var(--primary);
         }
-        
+
         .copyright {
-            color: #777;
-            font-size: 0.9rem;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 14px;
         }
-        
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                height: 400px;
-            }
-            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 42px;
             }
-            
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
+
+            .hero-btns {
                 flex-direction: column;
             }
-            
-            nav ul li {
-                margin-left: 0;
-                margin-bottom: 10px;
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul {
+                display: none;
             }
         }
     </style>
@@ -312,153 +392,200 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">VIP Game Hacks</div>
-            <div class="tagline">بهترین چیت های بازی با بالاترین کیفیت و کمترین قیمت</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">صفحه اصلی</a></li>
-                    <li><a href="#games">بازی ها</a></li>
-                    <li><a href="#pricing">تعرفه ها</a></li>
-                    <li><a href="#features">ویژگی ها</a></li>
-                    <li><a href="#contact">تماس با ما</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <a href="#" class="logo">Elite<span>GameHacks</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-    
+
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>حرفه ای بازی کن، برنده شو!</h1>
-            <p>با چیت های حرفه ای ما در تمامی بازی های محبوب موبایل، تجربه ای متفاوت داشته باشید. آنتی بن، پشتیبانی 24 ساعته و آپدیت رایگان برای همیشه!</p>
-            <a href="#pricing" class="btn">خرید چیت</a>
-        </div>
-    </section>
-    
-    <section class="games-section container" id="games">
-        <h2 class="section-title">بازی های پشتیبانی شده</h2>
-        <div class="games-grid">
-            <div class="game-card">
-                <img src="https://via.placeholder.com/300x200?text=Free+Fire" alt="Free Fire">
-                <div class="game-card-content">
-                    <h3>فری فایر</h3>
-                    <p>چیت فری فایر ما شامل AIMBOT پیشرفته، والهک، دید در شب و ضد تشخیص کامل است. با این چیت همیشه در صدر جدول باشید و لذت واقعی بازی را تجربه کنید.</p>
-                    <a href="#pricing" class="btn">خرید چیت فری فایر</a>
-                </div>
-            </div>
-            
-            <div class="game-card">
-                <img src="https://via.placeholder.com/300x200?text=Pubg+Mobile" alt="Pubg Mobile">
-                <div class="game-card-content">
-                    <h3>پابجی موبایل</h3>
-                    <p>چیت پابجی موبایل با قابلیت های منحصر به فرد مانند تشخیص خودکار دشمن، کاهش ریکویل، رادار پیشرفته و مود نامرئی شما را به یک حرفه ای تبدیل می کند.</p>
-                    <a href="#pricing" class="btn">خرید چیت پابجی</a>
-                </div>
-            </div>
-            
-            <div class="game-card">
-                <img src="https://via.placeholder.com/300x200?text=Call+of+Duty+Mobile" alt="Call of Duty Mobile">
-                <div class="game-card-content">
-                    <h3>کالاف دیوتی موبایل</h3>
-                    <p>چیت کالاف دیوتی شامل AIMBOT هوشمند، اسپید هک، دید زامبی و ضد گزارش است. با این چیت در تمامی حالت های بازی برنده شوید و رکورد بزنید.</p>
-                    <a href="#pricing" class="btn">خرید چیت کالاف</a>
-                </div>
-            </div>
-            
-            <div class="game-card">
-                <img src="https://via.placeholder.com/300x200?text=Warzone+Mobile" alt="Warzone Mobile">
-                <div class="game-card-content">
-                    <h3>وارزون موبایل</h3>
-                    <p>چیت وارزون موبایل با سیستم ضد بن قوی، رادار 3 بعدی، تشخیص فاصله دشمن و مود گرافیکی پیشرفته شما را به یک شکارچی حرفه ای تبدیل می کند.</p>
-                    <a href="#pricing" class="btn">خرید چیت وارزون</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Dominate Your Games With Premium Cheats</h1>
+                <p>Undetected, high-performance game enhancements for competitive players. Regular updates, premium support, and the safest cheats on the market.</p>
+                <div class="hero-btns">
+                    <a href="#pricing" class="btn">Get Started</a>
+                    <a href="#games" class="btn btn-outline">View Games</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="pricing-section container" id="pricing">
-        <h2 class="section-title">تعرفه های اشتراک</h2>
-        <table class="pricing-table">
-            <thead>
-                <tr>
-                    <th>مدت زمان</th>
-                    <th>فری فایر</th>
-                    <th>پابجی موبایل</th>
-                    <th>کالاف دیوتی</th>
-                    <th>وارزون موبایل</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1 هفته</td>
-                    <td class="price">150,000 تومان</td>
-                    <td class="price">200,000 تومان</td>
-                    <td class="price">180,000 تومان</td>
-                    <td class="price">220,000 تومان</td>
-                </tr>
-                <tr>
-                    <td>15 روز</td>
-                    <td class="price">250,000 تومان</td>
-                    <td class="price">300,000 تومان</td>
-                    <td class="price">280,000 تومان</td>
-                    <td class="price">320,000 تومان</td>
-                </tr>
-                <tr>
-                    <td>1 ماه</td>
-                    <td class="price">400,000 تومان</td>
-                    <td class="price">450,000 تومان</td>
-                    <td class="price">420,000 تومان</td>
-                    <td class="price">480,000 تومان</td>
-                </tr>
-                <tr>
-                    <td>نامحدود</td>
-                    <td class="price">1,200,000 تومان</td>
-                    <td class="price">1,500,000 تومان</td>
-                    <td class="price">1,350,000 تومان</td>
-                    <td class="price">1,600,000 تومان</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    
-    <section class="features-section container" id="features">
-        <h2 class="section-title">چرا ما را انتخاب کنید؟</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i>🔒</i>
-                <h3>امنیت بالا</h3>
-                <p>چیت های ما با آخرین تکنولوژی های ضد تشخیص طراحی شده و احتمال بن شدن نزدیک به صفر است.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i>⚡</i>
-                <h3>پشتیبانی 24/7</h3>
-                <p>تیم پشتیبانی ما 24 ساعته و 7 روز هفته آماده پاسخگویی به سوالات و حل مشکلات شماست.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i>🔄</i>
-                <h3>آپدیت رایگان</h3>
-                <p>با هر آپدیت بازی، چیت شما به صورت رایگان آپدیت می شود و نیازی به خرید مجدد نیست.</p>
-            </div>
-            
-            <div class="feature-card">
-                <i>💯</i>
-                <h3>تضمین کیفیت</h3>
-                <p>در صورت عدم رضایت تا 24 ساعت پس از خرید، تمام مبلغ شما بازگردانده می شود.</p>
+
+    <section class="section" id="games">
+        <div class="container">
+            <h2 class="section-title">Supported <span>Games</span></h2>
+            <div class="games-grid">
+                <div class="game-card glass">
+                    <div class="game-icon">
+                        <img src="https://via.placeholder.com/36x36?text=FF" alt="Free Fire">
+                    </div>
+                    <h3>Free Fire</h3>
+                    <p>Our Free Fire cheat features advanced aimbot, ESP, no recoil, and anti-detection technology to give you the ultimate advantage in every match.</p>
+                    <a href="#pricing" class="btn btn-outline">View Plans</a>
+                </div>
+
+                <div class="game-card glass">
+                    <div class="game-icon">
+                        <img src="https://via.placeholder.com/36x36?text=PM" alt="PUBG Mobile">
+                    </div>
+                    <h3>PUBG Mobile</h3>
+                    <p>Dominate PUBG Mobile with our sophisticated cheat system including radar hacks, auto-aim, and intelligent enemy detection algorithms.</p>
+                    <a href="#pricing" class="btn btn-outline">View Plans</a>
+                </div>
+
+                <div class="game-card glass">
+                    <div class="game-icon">
+                        <img src="https://via.placeholder.com/36x36?text=CODM" alt="COD Mobile">
+                    </div>
+                    <h3>Call of Duty Mobile</h3>
+                    <p>Our COD Mobile cheat offers smart aiming systems, movement enhancements, and tactical advantages for all game modes.</p>
+                    <a href="#pricing" class="btn btn-outline">View Plans</a>
+                </div>
+
+                <div class="game-card glass">
+                    <div class="game-icon">
+                        <img src="https://via.placeholder.com/36x36?text=WZM" alt="Warzone Mobile">
+                    </div>
+                    <h3>Warzone Mobile</h3>
+                    <p>Advanced Warzone Mobile cheats with 3D radar, distance indicators, and sophisticated anti-ban protection for safe domination.</p>
+                    <a href="#pricing" class="btn btn-outline">View Plans</a>
+                </div>
             </div>
         </div>
     </section>
-    
+
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing <span>Plans</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card glass">
+                    <h3>Weekly</h3>
+                    <div class="price">$15<span>/week</span></div>
+                    <ul class="pricing-features">
+                        <li>Full cheat access</li>
+                        <li>Basic support</li>
+                        <li>Weekly updates</li>
+                        <li>1 device license</li>
+                    </ul>
+                    <a href="#" class="btn">Purchase</a>
+                </div>
+
+                <div class="pricing-card glass featured">
+                    <h3>Monthly</h3>
+                    <div class="price">$35<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Full cheat access</li>
+                        <li>Priority support</li>
+                        <li>Daily updates</li>
+                        <li>2 device licenses</li>
+                        <li>Custom settings</li>
+                    </ul>
+                    <a href="#" class="btn">Purchase</a>
+                </div>
+
+                <div class="pricing-card glass">
+                    <h3>Lifetime</h3>
+                    <div class="price">$150<span>/once</span></div>
+                    <ul class="pricing-features">
+                        <li>Full cheat access</li>
+                        <li>24/7 premium support</li>
+                        <li>Instant updates</li>
+                        <li>3 device licenses</li>
+                        <li>Custom settings</li>
+                        <li>Beta features</li>
+                    </ul>
+                    <a href="#" class="btn">Purchase</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose <span>Us</span></h2>
+            <div class="features-grid">
+                <div class="feature-card glass">
+                    <h3>Undetected</h3>
+                    <p>Our cheats use advanced obfuscation and memory manipulation techniques to remain completely undetected by anti-cheat systems.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <h3>Regular Updates</h3>
+                    <p>We update our cheats within hours of game patches to ensure uninterrupted service and maximum safety.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <h3>Premium Support</h3>
+                    <p>Our expert support team is available 24/7 to help with installation, configuration, and any issues you encounter.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <h3>Performance Optimized</h3>
+                    <p>Lightweight design ensures minimal impact on game performance while delivering maximum functionality.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <h3>Customizable</h3>
+                    <p>Fine-tune every aspect of the cheat to match your playstyle and maintain a natural gaming appearance.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <h3>Money Back Guarantee</h3>
+                    <p>If you're not completely satisfied within the first 24 hours, we offer a full refund with no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="container">
-            <div class="footer-links">
-                <a href="#">قوانین و مقررات</a>
-                <a href="#">سوالات متداول</a>
-                <a href="#">آموزش نصب</a>
-                <a href="#">تماس با پشتیبانی</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EliteGameHacks</h3>
+                    <p>The premier provider of high-quality, undetected game enhancements for competitive players worldwide.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Free Fire Cheat</a></li>
+                        <li><a href="#">PUBG Mobile Cheat</a></li>
+                        <li><a href="#">COD Mobile Cheat</a></li>
+                        <li><a href="#">Warzone Mobile Cheat</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Setup Guide</a></li>
+                        <li><a href="#">Troubleshooting</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
             </div>
+
             <div class="copyright">
-                © 2023 VIP Game Hacks. تمامی حقوق محفوظ است.
+                &copy; 2023 EliteGameHacks. All rights reserved. This product is not affiliated with any game developers.
             </div>
         </div>
     </footer>
