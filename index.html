@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه چیت بازی - VIP Game Hacks</title>
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --accent-color: #2ecc71;
+            --text-color: #f1f1f1;
+            --card-bg: #1e1e1e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--darker-bg), var(--dark-bg));
+            padding: 20px 0;
+            border-bottom: 3px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+        
+        .tagline {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        nav {
+            margin-top: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .games-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .game-card-content {
+            padding: 20px;
+        }
+        
+        .game-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .game-card p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .pricing-section {
+            margin-bottom: 50px;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .pricing-table th {
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: rgba(30, 30, 30, 0.5);
+        }
+        
+        .pricing-table tr:hover {
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+        
+        .features-section {
+            margin-bottom: 50px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+        
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--darker-bg);
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 3px solid var(--accent-color);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: var(--text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">VIP Game Hacks</div>
+            <div class="tagline">بهترین چیت های بازی با بالاترین کیفیت و کمترین قیمت</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">صفحه اصلی</a></li>
+                    <li><a href="#games">بازی ها</a></li>
+                    <li><a href="#pricing">تعرفه ها</a></li>
+                    <li><a href="#features">ویژگی ها</a></li>
+                    <li><a href="#contact">تماس با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>حرفه ای بازی کن، برنده شو!</h1>
+            <p>با چیت های حرفه ای ما در تمامی بازی های محبوب موبایل، تجربه ای متفاوت داشته باشید. آنتی بن، پشتیبانی 24 ساعته و آپدیت رایگان برای همیشه!</p>
+            <a href="#pricing" class="btn">خرید چیت</a>
+        </div>
+    </section>
+    
+    <section class="games-section container" id="games">
+        <h2 class="section-title">بازی های پشتیبانی شده</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Free+Fire" alt="Free Fire">
+                <div class="game-card-content">
+                    <h3>فری فایر</h3>
+                    <p>چیت فری فایر ما شامل AIMBOT پیشرفته، والهک، دید در شب و ضد تشخیص کامل است. با این چیت همیشه در صدر جدول باشید و لذت واقعی بازی را تجربه کنید.</p>
+                    <a href="#pricing" class="btn">خرید چیت فری فایر</a>
+                </div>
+            </div>
+            
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Pubg+Mobile" alt="Pubg Mobile">
+                <div class="game-card-content">
+                    <h3>پابجی موبایل</h3>
+                    <p>چیت پابجی موبایل با قابلیت های منحصر به فرد مانند تشخیص خودکار دشمن، کاهش ریکویل، رادار پیشرفته و مود نامرئی شما را به یک حرفه ای تبدیل می کند.</p>
+                    <a href="#pricing" class="btn">خرید چیت پابجی</a>
+                </div>
+            </div>
+            
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Call+of+Duty+Mobile" alt="Call of Duty Mobile">
+                <div class="game-card-content">
+                    <h3>کالاف دیوتی موبایل</h3>
+                    <p>چیت کالاف دیوتی شامل AIMBOT هوشمند، اسپید هک، دید زامبی و ضد گزارش است. با این چیت در تمامی حالت های بازی برنده شوید و رکورد بزنید.</p>
+                    <a href="#pricing" class="btn">خرید چیت کالاف</a>
+                </div>
+            </div>
+            
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x200?text=Warzone+Mobile" alt="Warzone Mobile">
+                <div class="game-card-content">
+                    <h3>وارزون موبایل</h3>
+                    <p>چیت وارزون موبایل با سیستم ضد بن قوی، رادار 3 بعدی، تشخیص فاصله دشمن و مود گرافیکی پیشرفته شما را به یک شکارچی حرفه ای تبدیل می کند.</p>
+                    <a href="#pricing" class="btn">خرید چیت وارزون</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing-section container" id="pricing">
+        <h2 class="section-title">تعرفه های اشتراک</h2>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>مدت زمان</th>
+                    <th>فری فایر</th>
+                    <th>پابجی موبایل</th>
+                    <th>کالاف دیوتی</th>
+                    <th>وارزون موبایل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 هفته</td>
+                    <td class="price">150,000 تومان</td>
+                    <td class="price">200,000 تومان</td>
+                    <td class="price">180,000 تومان</td>
+                    <td class="price">220,000 تومان</td>
+                </tr>
+                <tr>
+                    <td>15 روز</td>
+                    <td class="price">250,000 تومان</td>
+                    <td class="price">300,000 تومان</td>
+                    <td class="price">280,000 تومان</td>
+                    <td class="price">320,000 تومان</td>
+                </tr>
+                <tr>
+                    <td>1 ماه</td>
+                    <td class="price">400,000 تومان</td>
+                    <td class="price">450,000 تومان</td>
+                    <td class="price">420,000 تومان</td>
+                    <td class="price">480,000 تومان</td>
+                </tr>
+                <tr>
+                    <td>نامحدود</td>
+                    <td class="price">1,200,000 تومان</td>
+                    <td class="price">1,500,000 تومان</td>
+                    <td class="price">1,350,000 تومان</td>
+                    <td class="price">1,600,000 تومان</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section class="features-section container" id="features">
+        <h2 class="section-title">چرا ما را انتخاب کنید؟</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i>🔒</i>
+                <h3>امنیت بالا</h3>
+                <p>چیت های ما با آخرین تکنولوژی های ضد تشخیص طراحی شده و احتمال بن شدن نزدیک به صفر است.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i>⚡</i>
+                <h3>پشتیبانی 24/7</h3>
+                <p>تیم پشتیبانی ما 24 ساعته و 7 روز هفته آماده پاسخگویی به سوالات و حل مشکلات شماست.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i>🔄</i>
+                <h3>آپدیت رایگان</h3>
+                <p>با هر آپدیت بازی، چیت شما به صورت رایگان آپدیت می شود و نیازی به خرید مجدد نیست.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i>💯</i>
+                <h3>تضمین کیفیت</h3>
+                <p>در صورت عدم رضایت تا 24 ساعت پس از خرید، تمام مبلغ شما بازگردانده می شود.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">قوانین و مقررات</a>
+                <a href="#">سوالات متداول</a>
+                <a href="#">آموزش نصب</a>
+                <a href="#">تماس با پشتیبانی</a>
+            </div>
+            <div class="copyright">
+                © 2023 VIP Game Hacks. تمامی حقوق محفوظ است.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
